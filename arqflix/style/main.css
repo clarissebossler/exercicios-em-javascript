@@ -1,0 +1,104 @@
+/**declarando variáveis no CSS: dentro do :root
+
+Caso seja claro quais são as cores principais do site, elas podem ser definidas como variáveis.
+**/
+
+:root{
+    --vermelho: #E50914;
+    --preto: #141414;
+    --branco: #
+    /**--preto: #141414; --vermelho: #E50914;**/
+}
+
+
+/**reset**/
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box; /**Uma caixa pode ter um tamanha defeinido. Caso seu conteúdo seja maior que o tamanho da caixa, POR DEFAULT, ela se expandirá. O BOX-SIZING: BORDER-BOX impede que seu tamanho seja alterado (assim, o conteúdo que se "expremerá" para caber na caixa.) **/
+}
+
+/**elementos base**/
+body{
+    background: var(--preto);
+    font-family: 'Times New Roman', Times, serif; /**sobre Times e serif: fontes alternativas, caso a principal não for carregada pelo navegador**/
+    color: rgb(255, 255, 255);
+}
+
+header{
+    margin-left: 30px;
+}
+
+header .container{
+    display:flex; /**flexbox: uma maneira de alinhar elementos em tela.**/
+    flex-direction: row; /** "fileira", ou seja, em linha.**/
+    align-items:center;
+    justify-content:space-between;
+    margin-bottom: 20px;
+}
+
+header .logo{
+    color: var(--vermelho);
+    font-size:40px;
+}
+
+
+header nav a{  /**links de navegação**/
+    text-decoration:none;   /**retira o sublinhado**/
+    color:#AAA;
+    margin-right:10px; /**Criará um espaçamento entre cada link**/
+}
+
+header nav a:hover{ /**evento mouseover**/
+    color:#fff;
+
+}
+
+header article p{
+    color:#AAA;
+    width: 400px;
+    text-align: justify;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+/**filme principal**/
+.projeto-principal{
+    font-size:16px;
+    background: linear-gradient(rgba(0,0,0,.80), rgba(0,0,0,.70)100%), url(/img/capa-duplog.jpg);
+    height:400px;
+    background-size:cover;
+    background-position: center;
+
+    display: flex;
+    flex-direction:column;
+    justify-content: center
+}
+
+.projeto-principal .container{
+    margin-left: 30px;
+}
+
+.projeto-principal .descricao{
+    margin-top: 10px;
+    margin-bottom:50px;
+}
+
+.projeto-principal .titulo{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size:40px;
+}
+
+.projeto-principal .botoes .botao{
+    background-color: rgba(0,0,0,.50);
+    border:none;
+    color: #AAA;
+    padding:15px 45px; /**com 1 valor: aplica nos 4 lados. Com 2 valores: aplica o primeiro na vertical, o segundo na horizontal. Com 4 valores: aplica na ordem: para cima, direita, baixo, esquerda.**/
+    margin-right: 15px;
+    cursor: pointer; /**dentro do botão, cursor é a maozinha  (não é um evento)**/
+    transition: .3s ease all; /**tempo de transição para aplicar as configurações do mouseover**/
+}
+.projeto-principal .botoes .botao:hover{
+    background-color:white;
+    color:black;
+}
+
