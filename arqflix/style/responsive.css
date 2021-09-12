@@ -1,0 +1,37 @@
+@media screen and (max-width:900px) {
+    header .container{
+    display:flex;
+    flex-direction: column;
+    }
+
+    .mostrar{
+        display:contents;
+        background-color: #141414;
+        float:right;
+    }
+    
+    .botao{
+        margin-top: 5px;
+        width: 300px;
+    }
+
+    .carrossel .cont .projetos .projeto{
+        flex: none;
+        width: 50%;
+        height: 120px;
+        margin-bottom: 5px;
+        margin-top: 5px;
+    }
+
+    .animacao iframe{
+        width:65vw;
+    }
+
+}
+
+@media screen and (min-width:1000px) {
+    .descricao{
+        width: 50%;
+    }
+    
+}

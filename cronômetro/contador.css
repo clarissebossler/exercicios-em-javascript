@@ -1,0 +1,47 @@
+/* Usamos asterisco **** para regras globais (centralização,
+*/
+
+* {        
+    margin: 0;      /*espaçamento externo*/
+    padding: 0;    /*espaçamento interno da tag*/
+    box-sizing: border-box;
+}
+
+/* body será aplicada EM TODO BODY, inclusive em seus childrens (tags dentro de tags)
+*/
+
+body {
+    width: 100%;
+    font: normal bold 16px/normal tahoma;
+}
+
+article {
+    width: 400px;
+    text-align: center;
+    background-color:rgb(231, 217, 193);
+    border-radius: 10px;
+    margin: 50px auto 20px;
+    padding: 5px;
+    overflow: hidden;
+    box-shadow: 3px 3px 10px #ccc;
+}
+
+
+/* article h3: vai estilizar os 2 (o article e o h3) */
+article h3 {
+    padding: 10px;
+    color: rgb(119, 104, 83);
+}
+
+article .count {
+    padding: 45px;
+    
+}
+
+article #timer {
+    box-sizing: border-box;
+    padding: 5px;
+    color:greenyellow;
+    background-color: rgb(56, 56, 56);
+    border-radius: 2px;
+}

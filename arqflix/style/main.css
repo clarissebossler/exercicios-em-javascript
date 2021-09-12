@@ -6,8 +6,6 @@ Caso seja claro quais são as cores principais do site, elas podem ser definidas
 :root{
     --vermelho: #E50914;
     --preto: #141414;
-    --branco: #
-    /**--preto: #141414; --vermelho: #E50914;**/
 }
 
 
@@ -20,58 +18,65 @@ Caso seja claro quais são as cores principais do site, elas podem ser definidas
 
 /**elementos base**/
 body{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
     background: var(--preto);
-    font-family: 'Times New Roman', Times, serif; /**sobre Times e serif: fontes alternativas, caso a principal não for carregada pelo navegador**/
     color: rgb(255, 255, 255);
 }
 
 header{
     margin-left: 30px;
+    margin-right: 20px;
+    margin-bottom: 15px;
 }
 
 header .container{
     display:flex; /**flexbox: uma maneira de alinhar elementos em tela.**/
     flex-direction: row; /** "fileira", ou seja, em linha.**/
-    align-items:center;
-    justify-content:space-between;
+    align-items: center;
+    justify-content: space-between;
     margin-bottom: 20px;
 }
 
 header .logo{
     color: var(--vermelho);
-    font-size:40px;
+    font-size: 40px;
+    font-family: 'Arial Black', Times;
 }
 
 
-header nav a{  /**links de navegação**/
-    text-decoration:none;   /**retira o sublinhado**/
+header nav .botaomenu{  /**links de navegação**/
     color:#AAA;
-    margin-right:10px; /**Criará um espaçamento entre cada link**/
+    margin-right: 10px; /**Criará um espaçamento entre cada link**/
+    background-color: #141414;
+    border: none;
+    cursor: pointer;
 }
 
-header nav a:hover{ /**evento mouseover**/
+header nav .botaomenu:hover{ /**evento mouseover**/
     color:#fff;
-
 }
+
 
 header article p{
     color:#AAA;
-    width: 400px;
     text-align: justify;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 13px;
 }
 
-/**filme principal**/
+
+/**projeto principal**/
 .projeto-principal{
-    font-size:16px;
+    font-size: 16px;
     background: linear-gradient(rgba(0,0,0,.80), rgba(0,0,0,.70)100%), url(/img/capa-duplog.jpg);
-    height:400px;
-    background-size:cover;
+    height: 380px;
+    background-size: cover;
     background-position: center;
+   
 
     display: flex;
-    flex-direction:column;
-    justify-content: center
+    flex-direction: column;
+    justify-content: center;
 }
 
 .projeto-principal .container{
@@ -80,7 +85,11 @@ header article p{
 
 .projeto-principal .descricao{
     margin-top: 10px;
-    margin-bottom:50px;
+    margin-bottom: 50px;
+    margin-right: 50px;
+    text-align: justify;
+    
+    
 }
 
 .projeto-principal .titulo{
@@ -90,15 +99,126 @@ header article p{
 
 .projeto-principal .botoes .botao{
     background-color: rgba(0,0,0,.50);
-    border:none;
+    border: none;
     color: #AAA;
-    padding:15px 45px; /**com 1 valor: aplica nos 4 lados. Com 2 valores: aplica o primeiro na vertical, o segundo na horizontal. Com 4 valores: aplica na ordem: para cima, direita, baixo, esquerda.**/
-    margin-right: 15px;
+    padding:15px 50px; /**com 1 valor: aplica nos 4 lados. Com 2 valores: aplica o primeiro na vertical, o segundo na horizontal. Com 4 valores: aplica na ordem: para cima, direita, baixo, esquerda.**/
+    margin-right: 10px;
     cursor: pointer; /**dentro do botão, cursor é a maozinha  (não é um evento)**/
     transition: .3s ease all; /**tempo de transição para aplicar as configurações do mouseover**/
 }
 .projeto-principal .botoes .botao:hover{
     background-color:white;
     color:black;
+}
+
+.botao i{
+    margin-right: 8px;
+}
+
+.animacao{
+    display: grid;
+    place-items: center;
+}
+
+.carrossel{
+    display: grid;
+    place-items: center;
+}
+
+.carrossel .cont{
+    width: 65vw;
+}
+
+.carrossel .cont .projetos{
+    display: flex;
+    overflow-x: auto;
+}
+
+.carrossel .cont .projetos .projeto{
+    flex: none;
+    width: 20%;
+    height: 120px;
+    margin-bottom: 5px;
+    margin-top: 5px; 
+}
+
+img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    -webkit-mask-image: radial-gradient(rgba(0,0,0,.80), rgba(0,0,0,.05)100%) ;
+}
+
+footer{
+    text-align: center;
+    margin: 10px;
+    font-size: 12px;
+    color:#AAA;
+}
+
+
+/**ocultos**/
+.contmenu{
+    display: none;
+}
+.mostrar{
+    display: block;
+    background-color: #141414;
+    width: 220px;
+    float: right;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.animacao{
+    display: none;
+}
+.mostrar2{
+    display: grid;
+    place-items: center;
+}
+
+.modalcontainer{
+    display: none;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(107, 107, 107, 0.5);;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    z-index: 2000;
+    justify-content: center;
+    align-items: center;
+}
+
+.modalcontainer .mostrar3{
+    display: flex;
+}
+
+.modal{
+    color:white;
+    background: var(--preto);
+    width: 40%;
+    min-width: 300px;
+    padding: 40px;
+    border: 4px solid rgb(102, 100, 100);
+    box-shadow: 0 0 0 10px var(--preto);
+    text-align: center;
+    position: relative;
+}
+
+.botaofechar{
+    position: absolute;
+    top: -20px;
+    right: -20px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 4px solid var(--preto);
+    background: rgb(102, 100, 100);
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+    box-shadow: 0 4px 4px 0 rgba(0,0,0,.3);
 }
 
