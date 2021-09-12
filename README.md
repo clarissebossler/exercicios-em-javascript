@@ -1,5 +1,5 @@
-# exercicios-em-JavaScript
-Exercícios executados em JS, ministrados por:
+# exercicios-em-HTML-CSS-JS
+Exercícios executados em HTML, CSS e JavaScript, ministrados por:
 
 
 
