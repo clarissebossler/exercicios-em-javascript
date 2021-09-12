@@ -3,7 +3,7 @@ Exercícios executados em HTML, CSS e JavaScript, ministrados por:
 
 
 
-* DIO - Digital Inovation One
+* DIO - Digital Innovation One
 
 
   ​	Arqflix
