@@ -29,3 +29,32 @@ function snakeCreate(){
     }
 }
 snakeCreate();
+
+
+
+//Inicializar Jogo: definição do passo da cobrinha. Vamos colocar as funções já desenvolvidas dentro de uma unica função com caráter de inicialização.
+function gameStart(){
+    bgCreate();
+    snakeCreate();
+
+    //coordenadas para a função snakeCreate(?)
+    let snakeX = snake[0].x;   
+    let snakeY = snake[0].y;
+
+    //diretrizes para a função snakeCreate(?)
+    if(direction == 'right') snakeX += box;   //dá para fazer sem a chave!!
+    if(direction == 'left') snakeX -= box;
+    if(direction == 'up') snakeY -= box;
+    if(direction == 'down') snakeY += box;
+
+    //fazendo o passo (criar um box no inicio e apagar o do final)
+    snake.pop();
+
+    let snakeUnshift = {
+        x: snakeX,
+        y: snakeY
+    }
+    snake.unshift(snakeUnshift);
+}
+
+let game = setInterval(gameStart, 200); //setInterval: vai executar a função gameStart a cada 100 milisegundos.
