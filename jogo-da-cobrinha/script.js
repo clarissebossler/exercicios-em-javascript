@@ -13,6 +13,7 @@ let food = {
 }
 
 
+
 // 1 - DESENHANDO
 
 
@@ -21,7 +22,6 @@ function bgCreate() {
     context.fillStyle = 'lightgrey';
     context.fillRect(0, 0, 16 * box, 16 * box); //fillRect: metodo que desenha um retângulo preenchido. Parâmetros: posiçao (x, y), altura e largura. O estilo é determinado pelo fillStyle.
 }
-
 
 //Cobrinha: será um "array de coordenadas" em que, a cada "passo", um elemento é adicionado no início e um é retirado no fim.
 function snakeCreate(){
@@ -39,6 +39,8 @@ function foodCreate(){
 
 
 
+// 2. DEFININDO ENTRADAS DO TECLADO
+
 
 //recebendo entradas do teclado com eventListener
 document.addEventListener('keydown', update); //quando uma tecla for pressionada, o eventListener chamará a função update, passando como parâmetro o código da tecla.
@@ -54,6 +56,9 @@ function update (event){
 
 
 
+// 3. AÇÃO - A FUNÇÃO gameStart() é executada a cada 150 milisegundos.
+
+
 //Inicializar Jogo
 function gameStart(){
     //criando o "background infinito":
@@ -62,6 +67,14 @@ function gameStart(){
     if(snake[0].x < 0 * box && direction == 'left') snake[0].x = 16 * box;
     if(snake[0].y > 15 * box && direction == 'down') snake[0].y = 0;
     if(snake[0].y < 0 * box && direction == 'up') snake[0].y = 16 * box;
+
+    //checar condição de encerramento do jogo
+    for(i = 1; i < snake.length; i++){
+        if(snake[0].x == snake[i].x && snake[0].y == snake[i].y){
+            clearInterval();
+            alert('Fim de Jogo!');
+        }
+    }
 
     bgCreate();
     snakeCreate();
@@ -91,6 +104,6 @@ function gameStart(){
         y: snakeY
     }
     snake.unshift(snakeUnshift);
-}
+} //unshift adiciona um novo elemento no inicio (posição 0) da array.
 
-let game = setInterval(gameStart, 200); //setInterval: vai executar a função gameStart a cada 100 milisegundos.
+let game = setInterval(gameStart, 150); //setInterval: vai executar a função gameStart a cada 100 milisegundos.

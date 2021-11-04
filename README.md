@@ -6,7 +6,9 @@ Exercícios executados em HTML, CSS e JavaScript, ministrados por:
 * DIO - Digital Innovation One
 
 
-  ​	Arqflix
+    	Arqflix
+
+  ​	Jogo da Cobrinha 
 
   ​
 
