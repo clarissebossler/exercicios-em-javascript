@@ -7,7 +7,13 @@ snake[0] = {
     y: 8 * box
 }
 let direction = 'right';
+let food = {
+    x: Math.floor(Math.random() * 15 + 1) * box,
+    y: Math.floor(Math.random() * 15 + 1) * box
+}
 
+
+// 1 - DESENHANDO
 
 
 //Background: função para definir tamanho e cor.
@@ -24,6 +30,14 @@ function snakeCreate(){
         context.fillRect(snake[i].x, snake[i].y, box, box);
     }
 }
+
+//Comidinha
+function foodCreate(){
+    context.fillStyle = 'red';
+    context.fillRect(food.x, food.y, box, box);
+}
+
+
 
 
 //recebendo entradas do teclado com eventListener
@@ -51,6 +65,7 @@ function gameStart(){
 
     bgCreate();
     snakeCreate();
+    foodCreate();
 
     //coordenadas para a função snakeCreate(?)
     let snakeX = snake[0].x;   
@@ -62,8 +77,14 @@ function gameStart(){
     if(direction == 'up') snakeY -= box;
     if(direction == 'down') snakeY += box;
 
-    //fazendo o passo (criar um box no inicio e apagar o do final)
-    snake.pop();
+
+    //interação cobrinha com comida E passo
+    if(snakeX != food.x || snakeY != food.y){
+        snake.pop()
+    }else{
+        food.x = Math.floor(Math.random() * 15 + 1) * box;
+        food.y = Math.floor(Math.random() * 15 + 1) * box;
+    }
 
     let snakeUnshift = {
         x: snakeX,

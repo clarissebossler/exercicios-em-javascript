@@ -3,7 +3,7 @@ Exercício de desenvolvimento em JavaScript do curso da DIO - Diginal Inovation 
 
 
 
-"Desenvolvimento em 5(?) commits:"
+"Passos em 5 commits:"
 
 1 - Criação do background e da cobrinha.
 
@@ -11,6 +11,6 @@ Exercício de desenvolvimento em JavaScript do curso da DIO - Diginal Inovation 
 
 3 - Definição do "background infinito" e das entradas do teclado. 
 
-4 - Definição das "comidinhas" e suas regras.
+4 - Definição das "comidinhas" e regras relativas a elas.
 
 5 - Finalização do jogo.
